@@ -123,7 +123,7 @@ final class Plugin implements Capable, EventSubscriberInterface, PluginInterface
                     $this->composer->getInstallationManager()->getInstallPath($package),
                     array_filter($devFiles, function ($key) use ($matched) {
                         return in_array($key, $matched, true);
-                    }, ARRAY_FILTER_USE_KEY)
+                    }, PHP_VERSION_ID < 50600 ? 0 : ARRAY_FILTER_USE_KEY)
                 );
                 if (!$this->isDebug()) {
                     foreach ($files as $file) {
