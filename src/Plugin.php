@@ -143,4 +143,18 @@ final class Plugin implements Capable, EventSubscriberInterface, PluginInterface
     {
         return $this->config->isDebug();
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function deactivate(Composer $composer, IOInterface $io)
+    {
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function uninstall(Composer $composer, IOInterface $io)
+    {
+    }
 }
