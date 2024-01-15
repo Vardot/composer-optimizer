@@ -1,1 +1,1 @@
-other: [/*.md, !README.md, !LICENSE.md]
+other: [/*.md, "!README.md", "!LICENSE.md"]

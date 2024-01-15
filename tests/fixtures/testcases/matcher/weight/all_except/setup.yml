@@ -5,4 +5,4 @@ description: Removing all development files except "other" category in all packa
 config:
   octolab/cleaner:
     clean:
-      "*": [!other]
+      "*": ["!other"]

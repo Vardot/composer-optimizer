@@ -64,9 +64,9 @@ final class ClearCommand extends BaseCommand
                 throw new \InvalidArgumentException('No packages found for "'.$packageFilter.'"');
             }
         } else {
-            $packages = $repo->getPackages();
+            $packages = (array)$repo->getPackages();
         }
-
+        
         foreach ($packages as $package) {
             $plugin->handlePackage($package);
         }

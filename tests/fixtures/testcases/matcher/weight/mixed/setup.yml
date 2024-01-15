@@ -5,7 +5,7 @@ description: ~
 config:
   octolab/cleaner:
     clean:
-      "*": [!other]
+      "*": ["!other"]
       vendor/package1: [other]
       vendor/package2: ["*"]
-      vendor/package3: [!tests]
+      vendor/package3: ["!tests"]

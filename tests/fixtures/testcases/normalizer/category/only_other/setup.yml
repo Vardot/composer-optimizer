@@ -4,4 +4,4 @@ description: When only "other" category presented
 
 extra:
   dev-files:
-    other: [/*.md, !LICENSE.md]
+    other: [/*.md, "!LICENSE.md"]
