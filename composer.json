@@ -34,10 +34,10 @@
   },
   "require": {
     "php": "^8.1",
-    "ext-yaml": "*",
     "composer-plugin-api": "^2.0"
   },
   "require-dev": {
+    "ext-yaml": "*",
     "composer/composer": "^2.6",
     "phpunit/phpunit": "^10.5"
   },

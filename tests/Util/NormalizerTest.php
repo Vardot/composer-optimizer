@@ -3,7 +3,6 @@
 namespace OctoLab\Cleaner\Util;
 
 use OctoLab\Cleaner\TestCase;
-use SebastianBergmann\CodeCoverage\Report\PHP;
 use function yaml_parse_file;
 
 /**
