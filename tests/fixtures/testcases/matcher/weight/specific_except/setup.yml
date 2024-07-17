@@ -5,4 +5,4 @@ description: Removing all development files except "tests" category in the packa
 config:
   octolab/cleaner:
     clean:
-      vendor/package3: [!tests]
+      vendor/package3: ["!tests"]

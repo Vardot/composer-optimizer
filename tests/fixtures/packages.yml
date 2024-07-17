@@ -1,9 +1,9 @@
 vendor/package1:
 - /*.md
-- !LICENSE.md
+- "!LICENSE.md"
 
 vendor/package2:
-  other: [/*.md, !LICENSE.md]
+  other: [/*.md, "!LICENSE.md"]
 
 vendor/package3:
   bin:    [/bin, /action/demo.sh]

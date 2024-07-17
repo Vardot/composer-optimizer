@@ -3,7 +3,7 @@
 namespace OctoLab\Cleaner\Util;
 
 use OctoLab\Cleaner\TestCase;
-use Symfony\Component\Yaml\Yaml;
+use function yaml_parse_file;
 
 /**
  * @author Kamil Samigullin <kamil@samigullin.info>
@@ -13,11 +13,13 @@ class NormalizerTest extends TestCase
     /**
      * @return array
      */
-    public function cases()
+    public static function cases()
     {
         $cases = array();
         $normalizer = new CategoryNormalizer();
-        foreach (glob($this->getNormalizerTestCasePath() . '/category/*/') as $folder) {
+        foreach (glob(self::getNormalizerTestCasePath()
+                . 'category' . DIRECTORY_SEPARATOR
+                . '*' . DIRECTORY_SEPARATOR) as $folder) {
             $cases[] = array($normalizer, $folder);
         }
         return $cases;
@@ -41,11 +43,17 @@ class NormalizerTest extends TestCase
                     'dev-files' => array(),
                 ),
             ),
-            Yaml::parse(file_get_contents($folder . '/setup.yml'))
+            yaml_parse_file($folder . 'setup.yml')
         );
+
+        $expected = yaml_parse_file($folder . 'expected.yml');
+        $test = $normalizer->normalize($testCase['extra']['dev-files']);
+        ksort($expected);
+        ksort($test);
+
         self::assertEquals(
-            Yaml::parse(file_get_contents($folder . '/expected.yml')),
-            $normalizer->normalize($testCase['extra']['dev-files']),
+            $expected,
+            $test,
             sprintf('%s (%s: %s)', $testCase['message'], $testCase['title'], $testCase['description'])
         );
     }

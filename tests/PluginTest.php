@@ -37,7 +37,7 @@ class PluginTest extends TestCase
         $constants = $reflection->getConstants();
         foreach ($plugin::getSubscribedEvents() as $event => $method) {
             self::assertContains($event, $constants);
-            self::assertInternalType('callable', array($plugin, is_array($method) ? $method[0] : $method));
+            self::assertIsCallable(array($plugin, is_array($method) ? $method[0] : $method));
         }
     }
 

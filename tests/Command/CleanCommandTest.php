@@ -2,7 +2,6 @@
 
 namespace OctoLab\Cleaner\Command;
 
-use OctoLab\Cleaner\Plugin;
 use OctoLab\Cleaner\TestCase;
 use Symfony\Component\Console\Output\BufferedOutput;
 
@@ -22,25 +21,23 @@ class CleanCommandTest extends TestCase
             ->disableOriginalConstructor()
             ->getMock();
         $pluginManager->method('getPlugins')
-            ->willReturn(new Plugin());
+            ->willReturn([]);
 
-        $repo = $this->getMock('Composer\Repository\WritableRepositoryInterface');
+        $repo = $this->createMock('Composer\Repository\WritableRepositoryInterface');
         $repo->method('getPackages')
-            ->willReturn(array());
+            ->willReturn([]);
 
         $repositoryManager = $this->getMockBuilder('Composer\Repository\RepositoryManager')
             ->disableOriginalConstructor()
             ->getMock();
-        $repositoryManager->method('getLocalRepository')
-            ->willReturn($repo);
 
-        $composer = $this->getMock('Composer\Composer');
+        $composer = $this->createMock('Composer\Composer');
         $composer->method('getPluginManager')
             ->willReturn($pluginManager);
         $composer->method('getRepositoryManager')
             ->willReturn($repositoryManager);
 
-        /** @var \Composer\Composer| $composer */
+        /** @var \Composer\Composer $composer */
         $command->setComposer($composer);
 
         $reflection = new \ReflectionObject($command);

@@ -1,4 +1,4 @@
 bin:    [/bin, /action/demo.sh]
 docs:   [/docs]
 tests:  [/tests]
-other:  [/*.md, !LICENSE.md, /examples/*]
+other:  [/*.md, "!LICENSE.md", /examples/*]

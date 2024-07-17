@@ -5,4 +5,4 @@ description: Removing all development files except "docs" category in the packag
 config:
   octolab/cleaner:
     clean:
-      vendor/package3: [!docs, docs, "*"] # === [!docs]
+      vendor/package3: ["!docs", docs, "*"] # === [!docs]

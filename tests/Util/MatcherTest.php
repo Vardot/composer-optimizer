@@ -3,7 +3,8 @@
 namespace OctoLab\Cleaner\Util;
 
 use OctoLab\Cleaner\TestCase;
-use Symfony\Component\Yaml\Yaml;
+
+use function yaml_parse_file;
 
 /**
  * @author Kamil Samigullin <kamil@samigullin.info>
@@ -13,12 +14,14 @@ class MatcherTest extends TestCase
     /**
      * @return array
      */
-    public function cases()
+    public static function cases()
     {
         $cases = array();
         $matcher = new WeightMatcher();
         $normalizer = new CategoryNormalizer();
-        foreach (glob($this->getMatcherTestCasePath() . '/weight/*/') as $folder) {
+        foreach (glob(self::getMatcherTestCasePath()
+                . 'weight' . DIRECTORY_SEPARATOR
+                . '*' . DIRECTORY_SEPARATOR) as $folder) {
             $cases[] = array($matcher, $normalizer, $folder);
         }
         return $cases;
@@ -45,11 +48,13 @@ class MatcherTest extends TestCase
                     ),
                 ),
             ),
-            Yaml::parse(file_get_contents($folder . '/setup.yml'))
+            yaml_parse_file($folder . 'setup.yml')
         );
         $matcher->setRules($testCase['config']['octolab/cleaner']['clean']);
-        $expected = Yaml::parse(file_get_contents($folder . '/expected.yml'));
-        foreach ($this->getPackages() as $package => $devFiles) {
+        $expected = yaml_parse_file($folder . 'expected.yml');
+        ksort($expected);
+
+        foreach (self::getPackages() as $package => $devFiles) {
             self::assertEquals(
                 $expected[$package],
                 $matcher->match($package, array_keys($normalizer->normalize($devFiles))),

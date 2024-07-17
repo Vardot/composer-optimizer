@@ -5,4 +5,4 @@ description: Grouping numeric entries to "other" category
 extra:
   dev-files:
   - /*.md
-  - [!LICENSE.md]
+  - ["!LICENSE.md"]
