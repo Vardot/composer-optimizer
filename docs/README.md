@@ -71,7 +71,7 @@ By default [Cleaner plugin](https://github.com/vardot/composer-optimizer) do not
 ```yaml
 config:
   vardot/composer-optimizer:
-    clean:
+    clear:
       vendor/package1: [bin, docs]
       vendor/package2: [tests]
       vendor/package3: [other]
@@ -101,7 +101,7 @@ for test-related files.
 ```yaml
 config:
   vardot/composer-optimizer:
-    clean:
+    clear:
       *: *
 ```
 
@@ -110,7 +110,7 @@ Will be interpreted as _remove all `dev-files` from all packages_.
 ```yaml
 config:
   vardot/composer-optimizer:
-    clean:
+    clear:
       vendor/package1: *
 ```
 
@@ -119,7 +119,7 @@ Will be interpreted as _remove all `dev-files` from package `vendor/package1`_.
 ```yaml
 config:
   vardot/composer-optimizer:
-    clean:
+    clear:
       *: [bin]
 ```
 
@@ -128,7 +128,7 @@ Will be interpreted as _remove `bin` category of `dev-files` from all packages_.
 ```yaml
 config:
   vardot/composer-optimizer:
-    clean:
+    clear:
       vendor/*: [tests]
 ```
 
@@ -139,7 +139,7 @@ Will be interpreted as _remove `tests` category of `dev-files` from all packages
 ```yaml
 config:
   vardot/composer-optimizer:
-    clean:
+    clear:
       vendor/package1: [!bin]
 ```
 
@@ -150,7 +150,7 @@ Will be interpreted as _remove all categories of `dev-files` except `bin` from p
 ```yaml
 config:
   vardot/composer-optimizer:
-    clean:
+    clear:
       *: *
       vendor/package1: [!bin]
 ```
@@ -160,7 +160,7 @@ Will be interpreted as _remove all `dev-files` from all packages except package 
 ```yaml
 config:
   vardot/composer-optimizer:
-    clean:
+    clear:
       *: [bin]
       vendor/package1: [!bin]
 ```
@@ -170,7 +170,7 @@ Will be interpreted as _remove `bin` category of `dev-files` from all packages e
 ```yaml
 config:
   vardot/composer-optimizer:
-    clean:
+    clear:
       *: [!bin]
       vendor/package1: [bin]
 ```
