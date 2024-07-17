@@ -1,10 +1,15 @@
 {
-  "name": "octolab/cleaner",
+  "name": "vardot/composer-optimizer",
   "type": "composer-plugin",
   "description": "Composer plugin for removing development files.",
-  "homepage": "https://github.com/octolab/Cleaner",
+  "homepage": "https://github.com/Vardot/composer-optimizer",
   "license": "MIT",
   "authors": [
+    {
+      "role": "lead",
+      "name": "Emircan ERKUL",
+      "email": "e.erkul@vardot.com"
+    },
     {
       "role": "lead",
       "name": "Kamil Samigullin",
@@ -42,7 +47,6 @@
     "phpunit/phpunit": "^10.5"
   },
   "support": {
-    "irc": "irc://irc.gitter.im/octolab/Cleaner",
-    "issues": "https://github.com/octolab/Cleaner/issues"
+    "issues": "https://github.com/Vardot/composer-optimizer/issues"
   }
 }
