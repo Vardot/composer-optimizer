@@ -1,8 +1,8 @@
 <?php
 
-namespace OctoLab\Cleaner\Config;
+namespace Vardot\ComposerOptimizer\Config;
 
-use OctoLab\Cleaner\TestCase;
+use Vardot\ComposerOptimizer\TestCase;
 
 /**
  * @author Kamil Samigullin <kamil@samigullin.info>

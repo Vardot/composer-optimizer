@@ -1,6 +1,6 @@
 <?php
 
-namespace OctoLab\Cleaner;
+namespace Vardot\ComposerOptimizer;
 
 use function yaml_parse_file;
 

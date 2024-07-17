@@ -3,7 +3,7 @@ message: ~
 description: ~
 
 config:
-  octolab/cleaner:
+  vardot/composer-optimizer:
     clean:
       "*": ["!other"]
       vendor/package1: [other]

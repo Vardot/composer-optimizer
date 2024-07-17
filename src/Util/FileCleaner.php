@@ -1,6 +1,6 @@
 <?php
 
-namespace OctoLab\Cleaner\Util;
+namespace Vardot\ComposerOptimizer\Util;
 
 use Symfony\Component\Filesystem\Filesystem;
 

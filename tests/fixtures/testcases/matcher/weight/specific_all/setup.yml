@@ -3,7 +3,7 @@ message: ~
 description: Removing all development files in the packages "vendor/package1" and "vendor/package3"
 
 config:
-  octolab/cleaner:
+  vardot/composer-optimizer:
     clean:
       vendor/package1: "*"
       vendor/package3: ["*"]

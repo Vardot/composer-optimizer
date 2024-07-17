@@ -1,6 +1,6 @@
 <?php
 
-namespace OctoLab\Test;
+namespace Vardot\Test;
 
 use Composer\DependencyResolver\DefaultPolicy;
 use Composer\DependencyResolver\Operation\InstallOperation;
@@ -11,7 +11,7 @@ use Composer\Installer\PackageEvents;
 use Composer\Package\CompletePackage;
 use Composer\Repository\CompositeRepository;
 use Composer\Script\Event;
-use OctoLab\Cleaner\Plugin;
+use Vardot\ComposerOptimizer\Plugin;
 
 /**
  * @author Kamil Samigullin <kamil@samigullin.info>

@@ -1,9 +1,9 @@
 <?php
 
-namespace OctoLab\Cleaner\Command;
+namespace Vardot\ComposerOptimizer\Command;
 
 use Composer\Command\BaseCommand;
-use OctoLab\Cleaner\Plugin;
+use Vardot\ComposerOptimizer\Plugin;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 // @todo support debug option
@@ -23,7 +23,7 @@ final class ClearCommand extends BaseCommand
     protected function configure()
     {
         $this
-            ->setName('octolab:clear')
+            ->setName('vardot:clear')
             ->setDescription('Remove development files from installed packages')
             ->addArgument('package', InputArgument::OPTIONAL, 'Package for cleaning.')
             // @todo

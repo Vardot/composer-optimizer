@@ -1,6 +1,6 @@
 <?php
 
-namespace OctoLab\Cleaner;
+namespace Vardot\ComposerOptimizer;
 
 use Composer\Composer;
 use Composer\DependencyResolver\Operation\InstallOperation;
@@ -12,14 +12,14 @@ use Composer\IO\IOInterface;
 use Composer\Package\PackageInterface;
 use Composer\Plugin\Capable;
 use Composer\Plugin\PluginInterface;
-use OctoLab\Cleaner\Util\FakeCleaner;
+use Vardot\ComposerOptimizer\Util\FakeCleaner;
 
 /**
  * @author Kamil Samigullin <kamil@samigullin.info>
  */
 final class Plugin implements Capable, EventSubscriberInterface, PluginInterface
 {
-    const CONFIG_KEY = 'octolab/cleaner';
+    const CONFIG_KEY = 'vardot/composer-optimizer';
     const EXTRA_KEY = 'dev-files';
 
     /** @var Util\CleanerInterface */
@@ -75,7 +75,7 @@ final class Plugin implements Capable, EventSubscriberInterface, PluginInterface
     public function getCapabilities()
     {
         return array(
-            'Composer\Plugin\Capability\CommandProvider' => 'OctoLab\Cleaner\Command\CommandProvider',
+            'Composer\Plugin\Capability\CommandProvider' => 'Vardot\ComposerOptimizer\Command\CommandProvider',
         );
     }
 

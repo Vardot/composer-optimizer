@@ -3,6 +3,6 @@ message: ~
 description: Removing only "docs" category in the package "vendor/package3"
 
 config:
-  octolab/cleaner:
+  vardot/composer-optimizer:
     clean:
       vendor/package3: [docs, "*"] # === [docs]

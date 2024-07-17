@@ -18,12 +18,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "OctoLab\\Cleaner\\": "src/"
+      "Vardot\\ComposerOptimizer\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "OctoLab\\Cleaner\\": "tests/"
+      "Vardot\\ComposerOptimizer\\": "tests/"
     }
   },
   "config": {
@@ -32,7 +32,7 @@
     }
   },
   "extra": {
-    "class": "OctoLab\\Cleaner\\Plugin",
+    "class": "Vardot\\ComposerOptimizer\\Plugin",
     "branch-alias": {
       "dev-master": "1.x-dev"
     }

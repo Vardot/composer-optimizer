@@ -36,11 +36,11 @@ install:
 script:
 - ./vendor/bin/phpunit
 
-notifications:
-  slack: octolab:1eMS7IqOArBipiu31jYVd0cN
-  webhooks:
-    urls:
-    - https://webhooks.gitter.im/e/b1c428c4ec675b45dd8c
-    on_success: change
-    on_failure: always
-    on_start:   never
+# notifications:
+#   slack: vardot:todo
+#   webhooks:
+#     urls:
+#     - https://webhooks.gitter.im/e/b1c428c4ec675b45dd8c
+#     on_success: change
+#     on_failure: always
+#     on_start:   never

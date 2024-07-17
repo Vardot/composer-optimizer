@@ -1,6 +1,6 @@
 <?php
 
-namespace OctoLab\Cleaner\Util;
+namespace Vardot\ComposerOptimizer\Util;
 
 use Composer\IO\IOInterface;
 

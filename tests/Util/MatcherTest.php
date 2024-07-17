@@ -1,8 +1,8 @@
 <?php
 
-namespace OctoLab\Cleaner\Util;
+namespace Vardot\ComposerOptimizer\Util;
 
-use OctoLab\Cleaner\TestCase;
+use Vardot\ComposerOptimizer\TestCase;
 
 use function yaml_parse_file;
 
@@ -43,14 +43,14 @@ class MatcherTest extends TestCase
                 'message' => 'unknown test message',
                 'description' => 'unknown test description',
                 'config' => array(
-                    'octolab/cleaner' => array(
+                    'vardot/composer-optimizer' => array(
                         'clean' => array(),
                     ),
                 ),
             ),
             yaml_parse_file($folder . 'setup.yml')
         );
-        $matcher->setRules($testCase['config']['octolab/cleaner']['clean']);
+        $matcher->setRules($testCase['config']['vardot/composer-optimizer']['clean']);
         $expected = yaml_parse_file($folder . 'expected.yml');
         ksort($expected);
 

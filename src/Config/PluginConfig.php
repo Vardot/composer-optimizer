@@ -1,6 +1,6 @@
 <?php
 
-namespace OctoLab\Cleaner\Config;
+namespace Vardot\ComposerOptimizer\Config;
 
 /**
  * @author Kamil Samigullin <kamil@samigullin.info>
@@ -17,9 +17,9 @@ final class PluginConfig extends \ArrayObject
         $default = array(
             'clear' => null,
             'debug' => false,
-            'cleaner' => '\OctoLab\Cleaner\Util\FileCleaner',
-            'matcher' => '\OctoLab\Cleaner\Util\WeightMatcher',
-            'normalizer' => '\OctoLab\Cleaner\Util\CategoryNormalizer',
+            'cleaner' => '\Vardot\ComposerOptimizer\Util\FileCleaner',
+            'matcher' => '\Vardot\ComposerOptimizer\Util\WeightMatcher',
+            'normalizer' => '\Vardot\ComposerOptimizer\Util\CategoryNormalizer',
         );
         parent::__construct(
             $this->validate(array_merge(
@@ -30,7 +30,7 @@ final class PluginConfig extends \ArrayObject
     }
 
     /**
-     * @return \OctoLab\Cleaner\Util\CleanerInterface
+     * @return \Vardot\ComposerOptimizer\Util\CleanerInterface
      */
     public function getCleaner()
     {
@@ -38,17 +38,17 @@ final class PluginConfig extends \ArrayObject
     }
 
     /**
-     * @return \OctoLab\Cleaner\Util\MatcherInterface
+     * @return \Vardot\ComposerOptimizer\Util\MatcherInterface
      */
     public function getMatcher()
     {
-        /** @var \OctoLab\Cleaner\Util\MatcherInterface $matcher */
+        /** @var \Vardot\ComposerOptimizer\Util\MatcherInterface $matcher */
         $matcher = new $this['matcher']();
         return $matcher->setRules((array)$this['clear']);
     }
 
     /**
-     * @return \OctoLab\Cleaner\Util\NormalizerInterface
+     * @return \Vardot\ComposerOptimizer\Util\NormalizerInterface
      */
     public function getNormalizer()
     {
@@ -74,9 +74,9 @@ final class PluginConfig extends \ArrayObject
     {
         $isValid = (int)!is_array($config['clear']);
         $interfaces = array(
-            'cleaner' => 'OctoLab\Cleaner\Util\CleanerInterface',
-            'matcher' => 'OctoLab\Cleaner\Util\MatcherInterface',
-            'normalizer' => 'OctoLab\Cleaner\Util\NormalizerInterface',
+            'cleaner' => 'Vardot\ComposerOptimizer\Util\CleanerInterface',
+            'matcher' => 'Vardot\ComposerOptimizer\Util\MatcherInterface',
+            'normalizer' => 'Vardot\ComposerOptimizer\Util\NormalizerInterface',
         );
         foreach ($interfaces as $key => $interface) {
             $isValid |= (int)!is_subclass_of($config[$key], $interface, true);

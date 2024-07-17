@@ -1,6 +1,6 @@
 <?php
 
-namespace OctoLab\Cleaner;
+namespace Vardot\ComposerOptimizer;
 
 /**
  * @author Kamil Samigullin <kamil@samigullin.info>

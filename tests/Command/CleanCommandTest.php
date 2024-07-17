@@ -1,8 +1,8 @@
 <?php
 
-namespace OctoLab\Cleaner\Command;
+namespace Vardot\ComposerOptimizer\Command;
 
-use OctoLab\Cleaner\TestCase;
+use Vardot\ComposerOptimizer\TestCase;
 use Symfony\Component\Console\Output\BufferedOutput;
 
 /**

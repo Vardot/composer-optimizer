@@ -1,5 +1,5 @@
 {
-  "name": "octolab/cleaner-test",
+  "name": "vardot/composer-optimizer-test",
   "repositories": [
     { "url": "../package1", "type": "path" },
     { "url": "../package2", "type": "path" },
@@ -12,12 +12,12 @@
   },
   "autoload": {
     "psr-4": {
-      "OctoLab\\Cleaner\\": "../../../src/",
-      "OctoLab\\Test\\": "src/"
+      "Vardot\\ComposerOptimizer\\": "../../../src/",
+      "Vardot\\Test\\": "src/"
     }
   },
   "config": {
-    "octolab/cleaner": {
+    "vardot/composer-optimizer": {
       "clear": {
         "*": ["!tests"],
         "vendor/package1": ["other"],
@@ -27,6 +27,6 @@
     }
   },
   "scripts": {
-    "post-install-cmd": "OctoLab\\Test\\Integration::run"
+    "post-install-cmd": "Vardot\\Test\\Integration::run"
   }
 }

@@ -3,6 +3,6 @@ message: ~
 description: Removing only "docs" and "tests" categories in the package "vendor/package3"
 
 config:
-  octolab/cleaner:
+  vardot/composer-optimizer:
     clean:
       vendor/package3: [docs, tests]
