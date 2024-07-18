@@ -55,4 +55,4 @@ $ git remote add upstream git@github.com:vardot/composer-optimizer.git
 
 ## Notes
 
-- Tested on PHP 5.3, 5.4, 5.5, 5.6, 7.0, 7.1, 7.2, 8.2
+- Tested on PHP 5.3, 5.4, 5.5, 5.6, 7.0, 7.1, 7.2, 8.1
