@@ -236,10 +236,6 @@ config:
 
 If you set the `debug` option to `true`, then you activate debug mode. In this mode the `cleaner` option will be ignored and replaced by `\Vardot\ComposerOptimizer\Util\FakeCleaner`.
 
-The output looks like
-
-![stdout in debug mode](http://content.screencast.com/users/kamilsk/folders/Jing/media/b4c11328-91ee-4ac8-bc2e-c886d294e606/00000069.png)
-
 You can try this in [development installation](https://github.com/vardot/composer-optimizer#git-development) by the next steps
 
 ```bash
